@@ -1,6 +1,5 @@
 {{ partial "header.html" . }}
 <main>
-  {{ partial "sidebar.html" . }}
   <section>
     <header>
       <h2>{{ .Title }}</h2>
@@ -19,5 +18,6 @@
       {{ .Content }}
     </article>
   </section>
+  {{ partial "sidebar.html" . }}
 </main>
 {{ partial "footer.html" . }}
