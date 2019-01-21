@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+<main>
+  {{ partial "sidebar.html" . }}
+  <section>
+    <h2>{{ .Title }}</h2>
+    <ul>
+      {{ range (where .Data.Pages "Section" "!=" "") }}
+      <li>
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+        <a href="{{ .URL }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+</main>
+{{ partial "footer.html" . }}

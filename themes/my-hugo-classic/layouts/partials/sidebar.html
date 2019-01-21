@@ -1,0 +1,23 @@
+<section class='sidebar'>
+  <section class='author'>
+    <h3>Author</h3>
+    <ul>
+      <li>
+        <span>Name</span>
+        <span>NOBIE</span>
+      </li>
+      <li>
+        <span>Twitter</span>
+        <span><a href="https://twitter.com/NOBIE41">@NOBIE41</a></span>
+      </li>
+    </ul>
+  </section>
+  <section class='category'>
+    <h3>カテゴリー</h3>
+    <ul>
+      {{- range $termName, $entries := .Site.Taxonomies.categories }}
+      <li><a href="{{ "/categories/" | relLangURL }}{{ $termName | urlize }}">{{ $termName }}</a> ({{ $entries.Count }})
+      {{- end }}
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,6 @@
+baseURL = "https://nobie41.github.io/keiba/"
+languageCode = "ja-jp"
+title = "Mの法則"
+theme = "my-hugo-classic"
+publishDir = "docs"
+canonifyurls = true

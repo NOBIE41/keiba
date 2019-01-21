@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+<main>
+  {{ partial "sidebar.html" . }}
+  <section>
+    <header>
+      <h2>{{ .Title }}</h2>
+      <div class='article-info'>
+        <time>{{ .Date.Format "2006-01-02 15:04:05" }}</time>
+        <br/>
+  {{ with ($.Param "categories") }}
+        <span>カテゴリー:</span>
+      {{ range $k := . }}
+        <span style='padding-left:3px;'><a href="{{ relURL (print "/categories/" $k | urlize) }}">{{$k}}</a></span>
+  {{ end }}{{ end }}
+      </div>
+    </header>
+    <hr>
+    <article>
+      {{ .Content }}
+    </article>
+  </section>
+</main>
+{{ partial "footer.html" . }}

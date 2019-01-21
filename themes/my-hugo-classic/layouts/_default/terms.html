@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+<main>
+  {{ partial "sidebar.html" . }}
+  <section>
+    <h2>{{ .Title }}</h2>
+    <ul class="terms">
+      {{ range $key, $value := .Data.Terms }}
+      <li>
+        <a href="{{ (print "/" $.Data.Plural "/" (lower $key)) | relURL }}">
+          {{ $key }}
+        </a>
+        ({{ len $value }})
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+</main>
+
+{{ partial "footer.html" . }}
