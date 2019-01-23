@@ -48,3 +48,7 @@ time { font-family: monospace; }
 .article-info * {
   font-size: small;
 }
+
+footer {
+  text-align: center;
+}
